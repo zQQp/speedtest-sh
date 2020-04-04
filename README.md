@@ -23,3 +23,7 @@ Upload: 5.04 Mbit/s
 ```
 sudo apt install speedtest-cli
 ```
+## Sample Cronjob
+```
+42 1-23/2 * * * /home/pi/speedtest/speedtest.sh >> /home/pi/speedtest/results.txt
+```
