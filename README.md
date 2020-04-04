@@ -14,8 +14,8 @@ Sat Apr  4 19:51:48 CEST 2020
 42ms    notifications.gog.com
 26ms    media.discordapp.net
 
-Testing from Deutsche Telekom AG (217.224.172.23)...
-Hosted by WiTCOM (Wiesbaden) [8.41 km]: 31.918 ms
+Testing from Deutsche Telekom AG (x.x.x.x)...
+Hosted by WiTCOM (Wiesbaden) [x.xx km]: 31.918 ms
 Download: 10.19 Mbit/s
 Upload: 5.04 Mbit/s
 ```
