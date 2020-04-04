@@ -1,15 +1,13 @@
 #!/bin/bash
-echo '============================================================================================================='
-echo '-------------------- OKAY LETZ RUN DIS SPEEDTEST, SHALL WE??? IS ABOUT TIME ---------------------------------'
+
+printf '=== speedtest script ===\n'
 date
-echo '----------------- YO CHECK HOW FAST THIS GOOGLE GUYS ANSWER, HEEEEELLLOOOOO??? ------------------------------'
-ping -c 1 www.google.de
-echo '#############################################################################################################'
-ping -c 1 r5-assets.stryder.respawn.com
-echo '#############################################################################################################'
-ping -c 1 api4.origin.com
-echo '#############################################################################################################'
-ping -c 1 euw1.cap.riotgames.com
-echo '---------------------------------- FUCK MY SLOW A F INTERNET ------------------------------------------------'
-speedtest-cli
-echo '============================================================================================================='
+printf '\n'
+HOSTS="www.google.de r5-assets.stryder.respawn.com api4.origin.com euw1.cap.riotgames.com api.steampowered.com notifications.gog.com media.discordapp.net"
+for currentHost in $HOSTS
+do
+  t="$(ping -c 1 $currentHost | sed -ne '/.*time=/{;s///;s/\..*//;p;}')"
+  printf "$t%s\t$currentHost\n" "ms"
+done
+printf '\n'
+speedtest-cli | grep 'from\|Hosted\|Download\|Upload'
